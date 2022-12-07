@@ -18,7 +18,8 @@ function Galleryitem(props) {
     return (
       <div className='simple'>
         <h2>{props.item.trackName}</h2>
-        <small>{props.item.collectionName}collectionName</small>
+        <p>{props.item.artistName}</p>
+        <audio src={props.item.previewUrl} controls></audio>  
         <h4>{millisToMinutesAndSeconds(props.item.trackTimeMillis)}</h4>
       </div>
     )
@@ -27,8 +28,12 @@ function Galleryitem(props) {
   const detailView = () => {
     return (
       <div class="imgcontainer">
+        
         <img src={props.item.artworkUrl100}
           alt="Avatar" class="trackimage" />
+         
+        <p>{props.item.artistName}</p>
+       
       </div>
     )
   }
@@ -43,6 +48,3 @@ function Galleryitem(props) {
 }
 
 export default Galleryitem
-
-
-
